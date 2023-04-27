@@ -1,19 +1,15 @@
 import React from "react";
+
+import { Outlet } from "react-router-dom";
+import RightPart from "../Shared/RightPart";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 
-import LeftPart from "../Shared/LeftPart";
-import RightPart from "../Shared/RightPart";
-import { Outlet } from "react-router-dom";
-
-const Layout = () => {
+const NewsLayout = () => {
   return (
-    <>
+    <div>
       <Header></Header>
       <div className="flex justify-around  mt-8">
-        <div>
-          <LeftPart></LeftPart>
-        </div>
         <div>
           <Outlet></Outlet>
         </div>
@@ -22,8 +18,8 @@ const Layout = () => {
         </div>
       </div>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 
-export default Layout;
+export default NewsLayout;

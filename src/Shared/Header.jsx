@@ -3,6 +3,7 @@ import Logo from "../assets/logo.png";
 import moment from "moment/moment";
 import Marquee from "react-fast-marquee";
 import imgIcon from "../assets/index 1.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -38,9 +39,11 @@ const Header = () => {
       <nav className="">
         <div className="flex justify-around mt-5">
           <div className="text-md text-center text-[#706F6F] flex">
-            <a className="block mt-4 lg:mt-0  mr-4">Home</a>
-            <a className="block mt-4 lg:mt-0  mr-4">About</a>
-            <a className="block mt-4 lg:mt-0 ">Career</a>
+            <Link to="/" className="block mt-4 lg:mt-0  mr-4">
+              Home
+            </Link>
+            <Link className="block mt-4 lg:mt-0  mr-4">About</Link>
+            <Link className="block mt-4 lg:mt-0 ">Career</Link>
           </div>
 
           <div className="flex gap-4">

@@ -31,23 +31,23 @@ const RightPart = () => {
       <div>
         <h2 className="text-xl font-semibold mt-6">Find Us On</h2>
 
-        <div class="max-w-xl flex flex-col mt-4">
+        <div className="max-w-xl flex flex-col mt-4">
           <a
-            class="inline-flex items-center gap-x-3.5 py-4 rounded-md px-4 text-sm font-medium border"
+            className="inline-flex items-center gap-x-3.5 py-4 rounded-md px-4 text-sm font-medium border"
             href="#"
           >
             <FaFacebook className="text-lg bg-[#F3F3F3]" />
             Facebook
           </a>
           <a
-            class="inline-flex items-center gap-x-3.5 py-4 px-4 text-sm font-medium bg-white border "
+            className="inline-flex items-center gap-x-3.5 py-4 px-4 text-sm font-medium bg-white border "
             href="#"
           >
             <FaTwitter className="text-lg" />
             Twitter
           </a>
           <a
-            class="inline-flex items-center gap-x-3.5 rounded-md py-4 px-4 text-sm font-medium border -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg cursor-not-allowed focus:z-10 focus:outline-none "
+            className="inline-flex items-center gap-x-3.5 rounded-md py-4 px-4 text-sm font-medium border -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg cursor-not-allowed focus:z-10 focus:outline-none "
             href="#"
           >
             <FaInstagram className="text-lg" />
