@@ -7,7 +7,6 @@ import EditImg3 from "../assets/editorsInsight3.png";
 
 const Category = () => {
   const categoriesNews = useLoaderData();
-  console.log(categoriesNews);
 
   return (
     <div>

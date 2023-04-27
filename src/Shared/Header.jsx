@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../assets/logo.png";
 import moment from "moment/moment";
 import Marquee from "react-fast-marquee";
-import imgIcon from "../assets/index 1.png";
-import { Link } from "react-router-dom";
+
+import NavigationBar from "./NavigationBar";
 
 const Header = () => {
   return (
@@ -36,24 +36,7 @@ const Header = () => {
 
       {/* ============= Here is this Navbar part Here =========== */}
 
-      <nav className="">
-        <div className="flex justify-around mt-5">
-          <div className="text-md text-center text-[#706F6F] flex">
-            <Link to="/" className="block mt-4 lg:mt-0  mr-4">
-              Home
-            </Link>
-            <Link className="block mt-4 lg:mt-0  mr-4">About</Link>
-            <Link className="block mt-4 lg:mt-0 ">Career</Link>
-          </div>
-
-          <div className="flex gap-4">
-            <img src={imgIcon} alt="" />
-            <button className="inline-block text-md px-7 font-medium  bg-black text-white  py-2 leading-none border rounded-md">
-              Login
-            </button>
-          </div>
-        </div>
-      </nav>
+      <NavigationBar></NavigationBar>
     </div>
   );
 };
