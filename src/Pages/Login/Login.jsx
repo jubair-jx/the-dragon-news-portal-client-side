@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavigationBar from "../../Shared/NavigationBar";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/category/0";
+
+  const handleFormLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+    signInUser(email, password)
+      .then((result) => {
+        const signInUser = result.user;
+        console.log(signInUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="bg-gray-100 h-screen mt-0">
       <div className="pt-5">
@@ -11,7 +35,7 @@ const Login = () => {
         <div className="hero  bg-base-200">
           <div className="hero-content flex-col mt-16 ">
             <div className="card flex-shrink-0 w-[450px] shadow-2xl bg-base-100">
-              <div className="card-body">
+              <form onSubmit={handleFormLogin} className="card-body">
                 <div className="text-center ">
                   <h1 className="text-xl font-medium">Login Your Account</h1>
                 </div>
@@ -53,7 +77,7 @@ const Login = () => {
                     </Link>
                   </span>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

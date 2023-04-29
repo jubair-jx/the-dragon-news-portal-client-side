@@ -4,7 +4,13 @@ import imgIcon from "../assets/index 1.png";
 
 import { AuthContext } from "../Providers/AuthProvider";
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((err) => console.log(err));
+  };
   return (
     <nav className="pt-5">
       <div className="flex justify-around">
@@ -19,7 +25,10 @@ const NavigationBar = () => {
         <div className="flex gap-4">
           {user && <img src={imgIcon} alt="" />}
           {user ? (
-            <button className="inline-block text-md px-7 font-medium  bg-black text-white  py-2 leading-none border rounded-md">
+            <button
+              onClick={handleLogout}
+              className="inline-block text-md px-7 font-medium  bg-black text-white  py-2 leading-none border rounded-md"
+            >
               Logout
             </button>
           ) : (
